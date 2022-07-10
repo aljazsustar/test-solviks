@@ -1,0 +1,58 @@
+<div class="row">
+  <div class="col-6">
+    <div class="card mt-4">
+      <h4 class="card-header">Projects</h4>
+      <div class="card-body">
+        <div *ngIf="loading" class="spinner-border spinner-border-sm"></div>
+        <ul *ngIf="projects">
+          <a [routerLink]="['logs', project.id]" *ngFor="let project of projects">{{project.tile}}</a>
+        </ul>
+      </div>
+    </div>
+  </div>
+    <div class="col-6">
+      <div class="card mt-4">
+        <h4 class="card-header">Statistics</h4>
+        <div class="card-body">
+          <h6>Logs in last 24 hours: {{ stats?.logs_last_24h }}</h6>
+          <h6>Logs in the last hour: {{ stats?.logs_last_1h }}</h6>
+          <table class="table mt-4">
+            <thead class="thead-light">
+              <tr>
+                <th>Severity</th>
+                <th>Count</th>
+              </tr>
+            </thead>
+            <tr>
+              <td>Emergency</td>
+              <td>{{ stats?.by_severity?.emergency }}</td>
+            </tr>
+            <tr>
+              <td>Alert</td>
+              <td>{{ stats?.by_severity?.alert }}</td>
+            </tr>
+            <tr>
+              <td>Critical</td>
+              <td>{{ stats?.by_severity?.critical }}</td>
+            </tr>
+            <tr>
+              <td>Error</td>
+              <td>{{ stats?.by_severity?.error }}</td>
+            </tr>
+            <tr>
+              <td>Warning</td>
+              <td>{{ stats?.by_severity?.warning }}</td>
+            </tr>
+            <tr>
+              <td>Notice</td>
+              <td>{{ stats?.by_severity?.notice }}</td>
+            </tr>
+            <tr>
+              <td>Debug</td>
+              <td>{{ stats?.by_severity?.debug }}</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+</div>

@@ -1,0 +1,9 @@
+Django==4.0.5
+djangorestframework==3.13.1
+psycopg2-binary==2.9.3
+django-rest-enumfield==0.2.0
+djangorestframework-simplejwt==5.2.0
+django-cors-headers==3.13.0
+tablib==3.2.1
+openpyxl==3.0.10
+django-filter==22.1
